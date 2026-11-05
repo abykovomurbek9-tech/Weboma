@@ -145,15 +145,15 @@ body {
 }
 
 .header__logo {
-  width: 27px;
-  height: 27px;
+  width: 25px;
+  height: 25px;
   background: url('https://v.fastcdn.co/u/2fe19adf/64536088-0-Icons1-01.svg') center / contain no-repeat;
 }
 
 .header__avatar {
-  width: 50px;
-  height: 50px;
-  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Hti8Ji90A-5DKIEBu1cCHCBvks9wlU6Pi3mKMpOgTw&s') center / contain no-repeat;
+  width: 25px;
+  height: 25px;
+  background: url('images/Screenshot_20261105_134355_Gallery.jpg') center / contain no-repeat;
 }
 
 .nav {
