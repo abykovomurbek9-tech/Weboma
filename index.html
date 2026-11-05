@@ -1,125 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A student portfolio built with HTML only.">
-  <title>Aida — Student Portfolio</title>
+  <title>Full Neo-Brutalist Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="top" class="hero">
-    <p><small>ALA-TOO COLLEGE · WEB PROGRAMMING</small></p>
-    <h1>Aida's Creative Portfolio</h1>
-    <p>Student. Curious learner. Future web developer.</p>
-    <nav aria-label="Main navigation" class="navigatorik">
-      <a href="#about">About me</a> · <a href="#skills">Skills</a> ·
-      <a href="#work">My work</a> · <a href="#contact">Contact</a>
-    </nav>
-    <p><img src="media/hero.svg" alt="A computer with code symbols beside a cup and green mountains" width="960" height="240"></p>
-  </header>
 
-  <main>
-    <section class="section" id="about">
-      <h2>01 — About Me</h2>
-      <p>Hello! I'm <strong>Aida</strong>, a student at Ala-Too College in Bishkek.</p>
-      <p>I enjoy building useful pages, taking photos and learning how the web works.<br>
-        My current goal is to create a complete portfolio with <em>clear and meaningful HTML</em>.</p>
-      <blockquote><p>Small steps, regular practice, better websites.</p></blockquote>
-      <details>
-        <summary>What am I learning this month?</summary>
-        <p>I am learning page structure, images, media and forms. Next, I want to explore CSS.</p>
-      </details>
+  <div class="page">
+
+    <section class="hero" id="main">
+      <div class="divider"></div>
+
+      <div class="title title--hero">
+        <div class="title__line title__line--cyan">CLEAN&SIMPLE</div>
+        <div class="title__line title__line--yellow">PERSONAL</div>
+        <div class="title__line title__line--purple">PORTFOLIO</div>
+        <div class="title__line title__line--red">DESIGNED</div>
+        <div class="title__line title__line--dark">FOREVERYONE</div>
+      </div>
+
+      <div class="divider"></div>
     </section>
-    <hr>
 
-    <section class="section" id="skills">
-      <h2>02 — Skills &amp; Learning</h2>
-      <ul>
-        <li>Semantic page structure: header, main and footer</li>
-        <li>Links, lists and images</li>
-        <li>Audio, video and accessible form labels</li>
-      </ul>
-      <p><label for="portfolio-progress">Portfolio sections completed:</label>
-        <progress id="portfolio-progress" value="3" max="5">3 out of 5</progress> <strong>3 / 5</strong></p>
-      <p><label for="html-confidence">My HTML self-assessment:</label>
-        <meter id="html-confidence" min="0" max="100" low="40" high="80" optimum="100" value="70">70 out of 100</meter> <strong>70 / 100</strong></p>
-      <p>Today's written result: <output name="practice-result">3 sections completed</output></p>
-      <table>
-        <caption><strong>My weekly learning plan</strong></caption>
-        <thead><tr><th scope="col">Day</th><th scope="col">Topic</th><th scope="col">Goal</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Monday</th><td>HTML structure</td><td>Organize my page</td></tr>
-          <tr><th scope="row">Wednesday</th><td>Media and forms</td><td>Add a contact form</td></tr>
-          <tr><th scope="row">Friday</th><td>Practice</td><td>Check and improve my work</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <hr>
 
-    <section class="section" id="work">
-      <h2>03 — My Work</h2>
-      <article class="project-card">
-        <h3>My First Portfolio</h3>
-        <p><small>Started on <time datetime="2026-09-01">1 September 2026</time> · Personal project</small></p>
-        <figure>
-          <img src="media/project.svg" alt="Illustration of a simple portfolio page with a profile image and three content cards" width="680" height="220">
-          <figcaption>A simple page that presents my skills and learning journey.</figcaption>
-        </figure>
-        <p>I built this page to introduce myself and keep my work in one place.</p>
-        <ol>
-          <li>Create the header, main content and footer.</li>
-          <li>Add About, Skills, Work and Contact sections.</li>
-          <li>Test links, media files and form labels.</li>
-        </ol>
-        <details>
-          <summary>What was difficult?</summary>
-          <p>At first, I mixed up file paths. I learned to check the folder, filename and extension.</p>
-        </details>
-        <p><a href="#contact">Ask me about this project →</a></p>
-      </article>
-      <article class="project-card">
-        <h3>Media Practice</h3>
-        <p>A short sample sound:</p>
-        <audio controls preload="metadata"><source src="media/intro.wav" type="audio/wav">Your browser does not support audio.</audio>
-        <p>A short portfolio preview:</p>
-        <video controls width="560" preload="metadata" poster="media/video-poster.png"><source src="media/portfolio-demo.mp4" type="video/mp4">Your browser does not support video.</video>
-      </article>
-    </section>
-    <hr>
-
-    <section class="section" id="contact">
-      <h2>04 — Let's Connect</h2>
-      <p>Have a question about my work? Write a practice message below.</p>
-      <form>
-        <fieldset>
-          <legend>Contact form</legend>
-          <p><label for="visitor-name">Your name</label><br>
-            <input id="visitor-name" name="name" type="text" size="35" autocomplete="name" required></p>
-          <p><label for="visitor-email">Email address</label><br>
-            <input id="visitor-email" name="email" type="email" size="35" autocomplete="email" required></p>
-          <p><label for="visitor-topic">Topic</label><br>
-            <select id="visitor-topic" name="topic">
-              <option value="project">My project</option><option value="study">Learning HTML</option><option value="other">Other</option>
-            </select></p>
-          <p><label for="visitor-message">Message</label><br>
-            <textarea id="visitor-message" name="message" rows="5" cols="45" required></textarea></p>
-          <button type="submit" disabled>Send message</button>
-          <button type="reset">Clear form</button>
-          <p><small>Practice form: sending is disabled until a handler is connected.</small></p>
-        </fieldset>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <hr>
-    <p><small>© 2026 Aida · Made with HTML · Bishkek, Kyrgyzstan</small></p>
-    <p><a href="#top">↑ Back to top</a></p>
-    <button class="my-button">
-      <p>Наведись на меня</p>
-    </button>
     
-  </footer>
+    <section class="section section--about" id="about">
+
+
+      <header class="header">
+        <div class="header__left">
+          <div class="header__logo"></div>
+
+          <nav class="nav">
+            <a href="#main" class="nav__link">main</a>
+            <a href="#about" class="nav__link">about</a>
+            <a href="#work" class="nav__link">work</a>
+            <a href="#blog" class="nav__link">blog</a>
+          </nav>
+        </div>
+
+        <div class="header__avatar"></div>
+      </header>
+
+      <div class="divider"></div>
+
+      <div class="title title--about">
+        <div class="title__line title__line--cyan">OPPORTUNE</div>
+        <div class="title__line title__line--yellow">EXPLORE</div>
+        <div class="title__line title__line--purple">DESIGN&BUILD</div>
+        <div class="title__line title__line--red">LAUNCH</div>
+        <div class="title__line title__line--dark">TEST&LEARN</div>
+      </div>
+
+      <p class="about__description">
+        I'm An Entrepreneurial Spirited Digital Product Designer & Manager,<br>
+        With A Strong Background In Digital Technologies, Design & Web Development.
+      </p>
+
+      <div class="divider"></div>
+
+      
+      <div class="grid-2">
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro<br>Football Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider divider--short"></div>
+
+      
+      <div class="grid-3">
+        <article>
+          <div class="article-image"></div>
+          <div class="caption caption--article">
+            <h4>Snow Impacts Education Websites, It's Crucial They're Ready</h4>
+            <p>When shop sweeps across the country, the online shopping industry becomes more popular, attracts more customers, and makes shopping easier and faster for everyone.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="article-image"></div>
+          <div class="caption caption--article">
+            <h4>An Original Podcast Feature, Command Line Heroes By Red Hat</h4>
+            <p>Interviewed by Red Hat Software about my experience, skills, and knowledge in computer technology, as well as my interest in working with modern software and developing new skills.</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="article-image"></div>
+          <div class="caption caption--article">
+            <h4>Azure Web Apps Vs. VM? Consider This For Your Hosting Setup</h4>
+            <p>I will focus on two hosting solutions provided by the company, explaining their main features, advantages, and differences to help users understand which option is more suitable for their needs.</p>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+
+    
+    <section class="section" id="work">
+
+      <h2 class="section__title">WORK</h2>
+
+      <div class="divider divider--after-title"></div>
+
+      <div class="grid-2">
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro<br>Football Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+
+        <div class="card-dark">
+          <div class="card-dark__circle"></div>
+          <div class="card-dark__info">
+            <div class="card-dark__title">Women's Euro Sweepstake</div>
+            <div class="card-dark__category">2021<br>DIGITAL DESIGN, PRODUCT MANAGER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider divider--end-work"></div>
+
+    </section>
+
+
+    
+    <section class="section" id="blog">
+
+      <h2 class="section__title">BLOG</h2>
+
+      <div class="divider divider--after-title"></div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card__image"></div>
+          <div class="caption caption--blog">
+            <h4>Snow Impacts Education Websites, It's Crucial They're Ready</h4>
+            <p>When snow sweeps across the country, the online world for education providers take a pretty big hit. It doesn't seem obvious at first, why would it?</p>
+            <span class="caption__date">28TH MARCH 2018</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card__image"></div>
+          <div class="caption caption--blog">
+            <h4>An Original Podcast Feature, Command Line Heroes By Red Hat</h4>
+            <p>Interviewed by Red Hat Software, about my 'There is no Cloud' design for their new original podcast Command Line Heroes.</p>
+            <span class="caption__date">22ND MARCH 2018</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card__image"></div>
+          <div class="caption caption--blog">
+            <h4>Azure Web Apps Vs. VM? Consider This For Your Hosting Setup</h4>
+            <p>I'll focus on two hosting solutions provided by Microsoft Azure, and why using the Web App for your hosting may not be the best solution available.</p>
+            <span class="caption__date">1ST MARCH 2018</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card__image"></div>
+          <div class="caption caption--blog">
+            <h4>Receive Web & Mobile Design Project Quotations, The Easy Way</h4>
+            <p>Starting a web or mobile startup projects can be a scary task, some even put the whole thing on hold and never get around to ever achieving it</p>
+            <span class="caption__date">17TH JANUARY 2018</span>
+          </div>
+        </article>
+
+        
+        <article class="blog-card">
+          <div class="blog-card__image"></div>
+          <div class="caption caption--blog caption--short">
+            <h4>Launching The Official SKOOLping Landing Page Website</h4>
+            <p>We kicked the SKOOLping landing page ideas and concepts into production</p>
+            <span class="caption__date">9TH JANUARY 2018</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card__image"></div>
+          <div class="caption caption--blog caption--short">
+            <h4>6 Goals For 2018 - Focus, Progress And Experiment</h4>
+            <p>Rolling into a new year, always and naturally means setting new personal and business goals</p>
+            <span class="caption__date">4TH JANUARY 2018</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="divider divider--end-blog"></div>
+
+    </section>
+
+  </div>
+
+  
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    function highlightActiveLink() {
+      
+      let activeId = '';
+
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 200) {
+          activeId = section.id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + activeId);
+      });
+    }
+
+    window.addEventListener('scroll', highlightActiveLink);
+  </script>
+
 </body>
 </html>
