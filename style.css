@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* чтобы закреплённая шапка не закрывала начало секции после клика по меню */
 }
 
 * {
@@ -28,8 +29,7 @@ body {
   justify-content: center;
 }
 
-/* Главный контейнер: до 1024px, на узких экранах тянется по ширине.
-   position: relative нужен скрипту подсветки меню (offsetTop считается от него) */
+/* Главный контейнер: до 1024px, на узких экранах тянется по ширине. */
 .page {
   width: 100%;
   max-width: 1024px;
@@ -105,7 +105,7 @@ body {
 
 
 /* ==========================================
-   ОБЩАЯ ОСНОВА СЕКЦИЙ ABOUT / WORK / BLOG
+   ОБЩАЯ ОСНОВА СЕКЦИЙ ABOUT / STUDY / HOBBIES
    ========================================== */
 .section {
   width: 100%;
@@ -129,13 +129,20 @@ body {
 }
 
 
-
+/* ==========================================
+   ШАПКА И МЕНЮ
+   ========================================== */
 .header {
+  position: sticky;      /* шапка едет за прокруткой и прилипает к верху экрана */
+  top: 0;
+  z-index: 100;          /* поверх заголовков, у которых z-index: 1 */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 0;
   margin-bottom: 50px;
+  background-color: var(--bg);  /* без фона контент просвечивал бы сквозь шапку */
 }
 
 .header__left {
@@ -145,15 +152,16 @@ body {
 }
 
 .header__logo {
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   background: url('https://v.fastcdn.co/u/2fe19adf/64536088-0-Icons1-01.svg') center / contain no-repeat;
 }
 
 .header__avatar {
-  width: 25px;
-  height: 25px;
-  background: url('images/Screenshot_20261105_134355_Gallery.jpg') center / contain no-repeat;
+  width: 50px;
+  height: 50px;
+  background: url('https://lh3.googleusercontent.com/a/ACg8ocJge5Dw16Z2h6673uAN-DdIFqlUjqQgxwAEkYPT7eBaB3KoGj8m=s576-c-no') center / cover no-repeat;
+  border-radius: 50%;
 }
 
 .nav {
@@ -171,14 +179,16 @@ body {
   transition: color 0.2s ease;
 }
 
-
+/* Красный при наведении и для активного пункта */
 .nav__link:hover,
 .nav__link.is-active {
   color: var(--red);
 }
 
 
-
+/* ==========================================
+   ABOUT: ОПИСАНИЕ
+   ========================================== */
 .about__description {
   max-width: 620px;
   margin: 20px 0 50px;
@@ -190,7 +200,10 @@ body {
 }
 
 
-
+/* ==========================================
+   СЕТКИ КАРТОЧЕК
+   ========================================== */
+/* Две колонки, левая чуть больше чем в два раза шире правой */
 .grid-2 {
   width: 100%;
   display: grid;
@@ -216,7 +229,9 @@ body {
 }
 
 
-
+/* ==========================================
+   ТЁМНАЯ КАРТОЧКА ПРОЕКТА
+   ========================================== */
 .card-dark {
   height: 250px;
   padding: 25px;
@@ -256,7 +271,9 @@ body {
 }
 
 
-
+/* ==========================================
+   КАРТИНКИ: СТАТЬИ И БЛОГ
+   ========================================== */
 .article-image {
   height: 200px;
   background-color: var(--navy);
@@ -270,7 +287,11 @@ body {
 }
 
 
-
+/* ==========================================
+   ПОДПИСЬ ПОД КАРТИНКОЙ (общая часть)
+   Справа тонкая вертикальная линия. Её высота подобрана под
+   длину текста, поэтому задаётся вручную для каждого варианта.
+   ========================================== */
 .caption {
   position: relative;
   width: 100%;
@@ -288,7 +309,7 @@ body {
   background-color: rgba(121, 202, 210, 0.55);
 }
 
-
+/* --- Подпись статьи (секция about) --- */
 .caption--article::before {
   height: 78px;
 }
@@ -307,7 +328,7 @@ body {
   color: #666;
 }
 
-
+/* --- Подпись записи блога: линия + точка внизу линии --- */
 .caption--blog::before {
   height: 86px;
 }
@@ -323,7 +344,7 @@ body {
   border-radius: 50%;
 }
 
-
+/* Короткие тексты: линия и точка выше */
 .caption--blog.caption--short::before { height: 72.5px; }
 .caption--blog.caption--short::after  { top: 87.5px; }
 
@@ -353,7 +374,11 @@ body {
 }
 
 
+/* ==========================================
+   АДАПТИВ
+   ========================================== */
 
+/* ----- Планшеты и узкие окна ----- */
 @media (max-width: 768px) {
   .page {
     padding: 40px 20px 70px;
@@ -367,7 +392,7 @@ body {
     margin-top: 30px;
   }
 
-
+  /* Размер заголовков привязан к ширине экрана, чтобы строки не вылезали */
   .title--hero .title__line {
     font-size: min(11vw, 82px);
     letter-spacing: -0.12em;
@@ -387,7 +412,7 @@ body {
   }
 }
 
-
+/* ----- Телефоны ----- */
 @media (max-width: 600px) {
   .page {
     padding: 32px 16px 60px;
@@ -414,12 +439,12 @@ body {
     letter-spacing: -2px;
   }
 
-  
+  /* Убираем принудительный перенос строки в описании, пусть текст течёт сам */
   .about__description br {
     display: none;
   }
 
-  
+  /* Все сетки в одну колонку */
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
